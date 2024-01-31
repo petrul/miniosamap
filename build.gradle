@@ -20,7 +20,7 @@ publishing {
     }
 
     repositories {
-        final nexusUrl  = System.getenv() ['NEXUS_SERVER']
+        final nexusUrl   = System.getenv() ['NEXUS_SERVER']
         final nexusUser  = System.getenv() ['NEXUS_TEAMCITY_USER']
         final nexusPwd   = System.getenv() ['NEXUS_TEAMCITY_PASSWORD']
         println("nexus: ${nexusUrl} : ${nexusUser} / ${nexusPwd}")
