@@ -8,7 +8,6 @@ repositories {
 }
 
 dependencies {
-
     implementation "io.minio:minio:8.5.4"
     implementation "org.projectlombok:lombok:1.18.28"
     implementation 'org.apache.httpcomponents:httpclient:4.5.6'
@@ -22,10 +21,6 @@ dependencies {
 
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
-//    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-//    api libs.commons.math3
-//    implementation libs.guava
 }
 
 java {
