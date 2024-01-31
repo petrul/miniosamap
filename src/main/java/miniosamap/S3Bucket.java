@@ -267,7 +267,6 @@ public class S3Bucket {
         if (!iUnderstandThatThisIsADangerousOperation)
             throw new RuntimeException("this is a pontetially dangerous operation");
 
-//        final List<DeleteObject> list = this.list().stream().map(it -> new DeleteObject(it)).toList();
         try {
             this.deleteAllObjects();
 

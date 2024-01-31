@@ -96,7 +96,7 @@ class MinioITest {
     @Test
     void testVitrina() {
         final bucketName = "test-" + TestUtil.randomAlphabetic(10)
-        final serv = this.s3Server // S3Server.from("http://localhost:19000", "admin", "s3cr3tk3y")
+        final serv = this.s3Server
         serv.create(bucketName)
         final bucket = serv[bucketName]
         bucket['hello'] = 'world'
