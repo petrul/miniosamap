@@ -1,7 +1,6 @@
 # miniosamap
 
-Minio's a map. What? You don't believe me?
-
+Minio's a map. What? 
 Import this package into your Groovy project and do:
 
 bucket[key] = content
