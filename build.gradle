@@ -1,10 +1,52 @@
 plugins {
     id 'java-library'
     id 'groovy'
+    id "maven-publish"
 }
+
+group = 'ro.scriptorium'
+description = 'Minios a map!'
+version = '0.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+publishing {
+    publications {
+         myLibrary(MavenPublication) { // plain small jar
+             from components.java
+         }
+    }
+
+    repositories {
+        final nexusUrl  = System.getenv() ['NEXUS_SERVER']
+        final nexusUser  = System.getenv() ['NEXUS_TEAMCITY_USER']
+        final nexusPwd   = System.getenv() ['NEXUS_TEAMCITY_PASSWORD']
+        println("nexus: ${nexusUrl} : ${nexusUser} / ${nexusPwd}")
+
+        maven {
+            name 'nexus'
+            if(project.version.endsWith('-SNAPSHOT')) {
+                url = "${nexusUrl}/repository/maven-snapshots/"
+            } else {
+                url = "${nexusUrl}/repository/maven-releases/"
+            }
+            allowInsecureProtocol true
+            credentials {
+                username nexusUser
+                password nexusPwd
+            }
+        }
+//        maven {
+//            name = 'myRepo'
+//             if(project.version.endsWith('-SNAPSHOT')) {
+//                url = "file:///gv0/repo/snapshots"
+//            } else {
+//                url = "file:///gv0/repo/releases"
+//            }
+//        }
+    }
 }
 
 dependencies {
