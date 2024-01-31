@@ -6,4 +6,4 @@ Import this package into your Groovy project and do:
 
 bucket[key] = content
 
-See? I told you. It's a map.
+See? I told you. Minio's a map.
