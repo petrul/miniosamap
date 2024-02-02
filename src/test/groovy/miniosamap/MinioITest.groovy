@@ -12,7 +12,7 @@ class MinioITest {
 
     @BeforeEach
     void beforeEach() {
-        def url = "http://localhost:11101"
+        def url = "http://localhost:11100"
         def username = System.getenv()['MINIO_USER']
         def password = System.getenv()['MINIO_PASSWORD']
         this.s3Server = S3Server.from(url, username, password)
