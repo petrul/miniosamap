@@ -12,7 +12,10 @@ class MinioITest {
 
     @BeforeEach
     void beforeEach() {
-        this.s3Server = S3Server.from("http://localhost:19000", "admin", "s3cr3tk3y")
+        def url = "http://localhost:11101"
+        def username = System.getenv()['MINIO_USER']
+        def password = System.getenv()['MINIO_PASSWORD']
+        this.s3Server = S3Server.from(url, username, password)
         this.bucket = s3Server.create("test-" + TestUtil.randomAlphabetic(10))
     }
 

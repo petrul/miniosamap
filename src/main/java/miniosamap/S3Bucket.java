@@ -265,7 +265,7 @@ public class S3Bucket {
 
     public void destroy(boolean iUnderstandThatThisIsADangerousOperation) throws S3Exception {
         if (!iUnderstandThatThisIsADangerousOperation)
-            throw new RuntimeException("this is a pontetially dangerous operation");
+            throw new RuntimeException("this is a pontentially dangerous operation");
 
         try {
             this.deleteAllObjects();
